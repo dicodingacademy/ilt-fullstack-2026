@@ -31,43 +31,32 @@ Di dalam proyek ini, instruktur akan menemukan beberapa scripts yang berguna unt
   Menjalankan server statis menggunakan http-server untuk menyajikan berkas di direktori `dist/`. Ini berguna untuk memeriksa hasil production build secara cepat.
 
 ## Checklist Live Demo
+> Goal dari demo: Memberikan kemudahan dalam proses development dan build production ready dengan menggunakan module bundler (webpack)
 
-Agar sesi hands-on berjalan terstruktur, berikut adalah beberapa poin yang disarankan untuk dilakukan saat demo:
+Berikut adalah beberapa ceklis yang bisa instruktur lakukan ketika melakukan demo:
 
-- [ ] Menyiapkan starter project
-
-  - Buka repository dan pastikan semua dependency telah terpasang dengan npm install.
-  - Tinjau berkas package.json untuk memahami scripts yang tersedia.
-  - Cek struktur folder dan file utama pada src/.
-
-- [ ] Menjalankan Proyek dalam Mode Development
-
-  - Jalankan `npm run dev`.
-  - Tunjukkan cara kerja hot reload dengan mengubah kode di src/ dan melihat hasilnya langsung di peramban.
-
-- [ ] Membedah Konfigurasi Webpack (webpack.dev.js dan webpack.prod.js)
-
-  - Jelaskan entry point, output, serta loaders yang digunakan (misal css-loader, style-loader, dsb.).
-  - Tunjukkan penggunaan plugin seperti HtmlWebpackPlugin, CleanWebpackPlugin, dan CopyWebpackPlugin (jika ada).
-
-- [ ] Menjelaskan Perbedaan Development Mode dan Production Mode
-
-  - Bagaimana cara Webpack melakukan minification.
-  - Penggunaan devtool (mis. source-map) pada mode development.
-
-- [ ] Membuat Production Build
-
-  - Jalankan npm run build.
-  - Perlihatkan hasil yang di-bundle di direktori dist/.
-  - Jika diperlukan, jelaskan tree-shaking dan optimasi lain.
-
-- [ ] Mendemonstrasikan Proyek Final
-
-  - Jalankan npm run serve untuk menyajikan bundle dari dist/.
-  - Tunjukkan bahwa berkas JavaScript, CSS, dan aset lainnya telah di-bundle dengan benar.
-
-- [ ] (Opsional) Menambahkan Fitur Lanjutan
-
-  - Code splitting atau lazy loading modul.
-  - Menggunakan babel-loader untuk transpile ES6+ ke ES5.
-  - Mengonfigurasi alias path agar penulisan import lebih ringkas.
+- [ ] Runthrough kode di `starter` untuk memberikan gambaran ke siswa seberapa banyak berkas .js dan .css untuk membuat website ini.
+- [ ] Menjalankan starter project untuk memberikan gambaran project hands-on demo.
+  - Masuk ke directory `starter` dengan `cd starter`
+  - Kemudian jalankan local server dengan perintah `npx http-server .`
+  - Setelah memberikan gambaran ke siswa, hentikan server dengan `CTRL+C`
+- [ ] Menginisiasi proyek Node.js dengan `npm init --y`.
+- [ ] Memasang dependencies `webpack` dan package pendukung lainnya.
+  - `npm install webpack webpack-cli webpack-dev-server webpack-merge css-loader style-loader clean-webpack-plugin copy-webpack-plugin html-webpack-plugin`
+  - Menjelaskan perlahan fungsi-fungsi dependencies yang dipasang.
+- [ ] Menyiapkan runner scripts pada package.json (bisa merujuk pada solution)
+- [ ] Menuliskan konfigurasi webpack sambil menjelaskan secara perlahan.
+  - Mulai dari `webpack.common.js`
+  - Lanjut `webpack.dev.js`
+  - Lanjut `webpack.prod.js`
+- [ ] Menyesuaikan kode agar align dengan konfigurasi webpack.
+  - Menyesuaikan kode di `index.html`
+    - Menghapus import manual di akhir <body>
+    - Menghapus import manual CSS di <head>
+  - Menyesuaikan kode di `assets/scripts/app.js`
+    - Mengimpor style di berkas `app.js`
+- [ ] Menjalankan development server dengan -> `npm run dev`
+  - Menjelaskan tentang fitur hot-reload
+- [ ] Build website to production ready -> `npm run build`
+  - Runthrough hasil build
+  - Jalankan hasil build dengan perintah -> `npm run serve`
