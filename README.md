@@ -42,7 +42,7 @@ Berikut adalah beberapa ceklis yang bisa instruktur lakukan ketika melakukan dem
   - Setelah memberikan gambaran ke siswa, hentikan server dengan `CTRL+C`
 - [ ] Menginisiasi proyek Node.js dengan `npm init --y`.
 - [ ] Memasang dependencies `webpack` dan package pendukung lainnya.
-  - `npm install webpack webpack-cli webpack-dev-server webpack-merge css-loader style-loader clean-webpack-plugin copy-webpack-plugin html-webpack-plugin`
+  - `npm install webpack webpack-cli webpack-dev-server webpack-merge css-loader style-loader clean-webpack-plugin copy-webpack-plugin html-webpack-plugin --save-dev`
   - Menjelaskan perlahan fungsi-fungsi dependencies yang dipasang.
 - [ ] Menyiapkan runner scripts pada package.json (bisa merujuk pada solution)
 - [ ] Menuliskan konfigurasi webpack sambil menjelaskan secara perlahan.
