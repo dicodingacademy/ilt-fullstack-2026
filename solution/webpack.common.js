@@ -4,7 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './assets/scripts/script.js',
+  entry: './assets/scripts/app.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
   },
