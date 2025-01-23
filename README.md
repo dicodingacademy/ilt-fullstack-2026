@@ -28,11 +28,12 @@ Untuk menyediakan music secara online, kita memerlukan API yang menyediakan data
 
 Instruktur dapat memanfaatkan checklist live demo berikut agar sesi hands-on lebih terstruktur.
 
-- [ ] Menyiapkan starter project yang telah disediakan.
-- [ ] Menjalankan proyek dengan local server. Bisa menggunakan [http-server](https://www.npmjs.com/package/http-server) atau [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) bagi pengguna VS Code.
-- [ ] Melakukan bedah kode secara cepat dan memahami praktik simulasi indikator loading.
-- [ ] Menyusun kebutuhan Music API untuk membuat HTTP request pada `scripts/api.js`.
-- [ ] Membuat HTTP request untuk Music API.
-  - [ ] Memanfaatkan chaining method `then()`.
-  - [ ] Memanfaatkan fitur `async/await`.
-- [ ] Mengatur agar dua atau lebih audio tidak dimainkan secara serentak (memanfaatkan event `play`).
+- [ ] Menjalankan starter project.
+  - Masuk ke folder `starter` dengan perintah: `cd starter` 
+  - Memasang dependencies dengan menggunakan perintah `npm install`
+  - Menjalankan server development dengan perintah `npm run dev`
+  - Buka aplikasi di browser dengan mengujungi http://localhost:8080
+- [ ] Runthrough exisiting code untuk mendapatkan gambaran kode yang ada saat ini.
+- [ ] Membuat fungsi `getAllMusics` untuk mendapatkan data `musics` dari API di berkas `assets/scripts/data/api.js`.
+- [ ] Gunakan fungsi tersebut di berkas `assets/scripts/app.js` menggantikan versi lokal.
+- [ ] (Optional) Eksplorasi tentang Axios (Library untuk melakukan HTTP API).
