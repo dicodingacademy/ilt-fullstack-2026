@@ -60,3 +60,8 @@ Berikut adalah beberapa ceklis yang bisa instruktur lakukan ketika melakukan dem
 - [ ] Build website to production ready -> `npm run build`
   - Runthrough hasil build
   - Jalankan hasil build dengan perintah -> `npm run serve`
+
+## Tips Live Demo
+1. Gunakan IDE yang proper, contoh (WebStorm atau VSCode).
+2. Manfaatkan AI Code Assistant, contoh (Amazon Q atau GitHub Copilot).
+3. Jangan ragu untuk me-referensi dari solution project atau bahkan copy-paste.
