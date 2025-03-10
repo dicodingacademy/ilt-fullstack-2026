@@ -1,59 +1,53 @@
-# ILT FEBE 2024
-
-Repository ini dikhususkan untuk para instruktur ILT. Lakukanlah fork jika ingin melakukan perubahan kode dan memberikannya ke para siswa.
+# ILT Membangun Peta Digital
 
 ## Pengantar
 
-Selamat datang di ILT Hands-on Deck!
+Studi kasus ini ditujukan untuk ILT dengan materi Leaflet.js, OpenStreetMap (OSM), dan Geolocation API. Dengan memanfaatkan teknologi ini, kita bisa membangun aplikasi web interaktif yang menampilkan peta digital serta mengakses lokasi pengguna secara real-time.
 
-Repository ini menyimpan seluruh kebutuhan Hands-on demo dalam sesi ILT. Studi kasus yang diangkat dalam Hands-on demo adalah **Calm Headphones**. Ia adalah aplikasi yang menyediakan layanan untuk meningkatkan produktivitas dan fokus dalam bermeditasi.
+Tujuan utama dari hands-on ini adalah mempelajari cara mengintegrasikan peta digital ke dalam aplikasi web dan memahami cara kerja Geolocation API dalam menentukan posisi pengguna.
 
-Topik Calm Headphones akan selalu digunakan dari satu ILT ke ILT berikutnya. Oleh karena itu, kami pisahkan kemajuan aplikasi dalam branch terpisah.
+## Petunjuk
 
-## Daftar ILT
+Branch repository ini mengandung dua direktori yang bersifat starter dan solution project. Sebagai pembuka sesi hands-on demo, instruktur dipersilakan untuk memanfaatkan proyek dalam direktori `starter`. Direktori ini adalah dasar untuk demo project yang akan dikembangkan sepanjang sesi.
 
-Berikut adalah daftar topik hands-on yang akan diangkat per ILT.
+## Hasil Akhir Proyek
 
-### ILT-1 Buat Website Pertamamu
+Pada akhir hands-on, peserta akan memiliki aplikasi web yang:
 
-Pengembangan Calm Headphones Landing Page menggunakan HTML dan CSS. Pengembangan layout-nya yang responsif akan melibatkan Flexible Box Layout atau flexbox.
+- menampilkan peta interaktif menggunakan Leaflet dengan data dari OpenStreetMap.
+- menampilkan marker berdasarkan lokasi pengguna yang diperoleh dari Geolocation API.
+- memungkinkan interaksi dengan elemen-elemen peta, seperti zoom dan marker tambahan.
 
-Berikut gambaran hasil akhirnya.
+Gambaran hasil:
 
-Anda bisa klik [link ini](https://github.com/dicodingacademy/ilt-febe-2024/tree/01-html-css) untuk menuju ke branch terkait.
+![Store Locator Teaser](store-locator-teaser.png 'Store Locator Teaser')
 
-### ILT-2 Membuat Websitemu Lebih Interaktif
+## Mengenal Scripts di package.json
 
-Dalam tahap ini, aplikasi Calm Headphones menjadi interatif dengan menambahkan JavaScript dan DOM manipulation di dalamnya.
+Di dalam proyek ini, instruktur akan menemukan beberapa scripts yang berguna untuk pengembangan dan produksi:
 
-Berikut gambaran hasil akhirnya.
+- `npm run dev`:Menjalankan development server.
+- `npm run build`: membuat production build.
+- `npm run preview`: menjalankan server statis.
 
-Anda bisa klik [link ini](https://github.com/dicodingacademy/ilt-febe-2024/tree/02-dom-manipulation-event) untuk menuju ke branch terkait.
+## Checklist Live Demo
 
-### ILT-3 Berkomunikasi dengan RESTful API
+Berikut adalah beberapa ceklis yang bisa instruktur lakukan ketika melakukan demo:
 
-ILT ini mengangkat topik Asynchronous JavaScript Request atau AJAX. Aplikasi Calm Headphones akan dihubungkan dengan server untuk mendapatkan data dari web server.
+- [ ] Runthrough harapan hasil dari demo project melalui direktori `solution`.
+  - Masuk ke directory solution dan jalankan local server.
+  - Tunjukkan kepada siswa untuk memberi gambaran.
+  - Tutup browser dan kembali ke code editor.
+- [ ] Runthrough seluruh kode dalam `starter` dan tunjukkan gambaran hasilnya.
+- [ ] Memasang seluruh dependencies proyek (`npm install`).
+- [ ] Memastikan library Leaflet terpasang (`npm install leaflet`)
+- [ ] Menyelesaikan seluruh TODO dalam proyek starter.
+  - [ ] Runthrough berbagai API dari [Leaflet Doc](https://leafletjs.com/reference.html).
+- [ ] Memastikan hasil akhir sudah sesuai dengan `solution`.
+- [ ] (Opsional) Mendemonstrasikan penggunaan Geolocatoin API dalam peta digital.
 
-Berikut gambaran hasil akhirnya.
+## Tips Live Demo
 
-Anda bisa klik [link ini](https://github.com/dicodingacademy/ilt-febe-2024/tree/03-async-javascript-request) untuk menuju ke branch terkait.
-
-### ILT-4 Selangkah Lebih Maju dengan PWA
-
-Untuk meningkatkan pengalaman pengguna, aplikasi Calm Headphones akan menerapkan Progressive Web App (PWA).
-
-Berikut gambaran hasil akhirnya.
-
-Anda bisa klik [link ini](https://github.com/dicodingacademy/ilt-febe-2024/tree/04-progressive-web-app) untuk menuju ke branch terkait.
-
-### ILT-5 Menguji Aplikasi Web
-
-Potensi bug dan error bisa saja terjadi pada aplikasi apa pun. Oleh karena itu, pengujian aplikasi perlu dilaksanakan dalam tahap pengembangannya. Ada beberapa metode pengujian dan Calm Headphones akan menggunakan cara otomatis atau **Automated Testing**.
-
-Berikut gambaran hasil akhirnya.
-
-Anda bisa klik [link ini](https://github.com/dicodingacademy/ilt-febe-2024/tree/05-automated-testing) untuk menuju ke branch terkait.
-
-### ILT-6 JavaScript untuk Pengembangan di Sisi Server
-
-......
+- Gunakan browser modern seperti Chrome atau Firefox untuk mendukung Geolocation API.
+- Manfaatkan solution/ untuk melihat referensi implementasi lengkap.
+- Manfaatkan AI Code Assistant, contoh (Amazon Q atau GitHub Copilot).

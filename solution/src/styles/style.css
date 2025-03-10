@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+}
+
+a {
+  color: #404040;
+  text-decoration: none;
+}
+a:hover {
+  color: #101010;
+}
+
+/* Store locator section */
+.store-locator__sidebar {
+  position: absolute;
+  width: 33.3333%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border-right: 1px solid #00000033;
+}
+.store-locator__map {
+  position: absolute;
+  left: 33.3333%;
+  width: 66.6666%;
+  top: 0;
+  bottom: 0;
+}
+
+/* Store locator sidebar */
+.heading {
+  display: flex;
+  height: 80px;
+  border-bottom: 1px solid #eee;
+  align-items: end;
+}
+.heading__text {
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding-inline: 10px;
+  padding-block: 20px;
+}
+
+.listings {
+  list-style: none;
+  height: calc(100% - 80px);
+  overflow: auto;
+}
+
+.listings-item {
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+}
+.listings-item.active {
+  background-color: #00853e22;
+}
+.listings-item:last-child {
+  border-bottom: none;
+}
+
+.listings-item__title {
+  color: #00853e;
+  font-weight: 700;
+}
+.listings-item__title:hover {
+  color: #8cc63f;
+}
+
+/* Customize scroll bar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: none;
+}
+::-webkit-scrollbar-thumb {
+  background: #00853e;
+}
