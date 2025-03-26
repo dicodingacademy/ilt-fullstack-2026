@@ -1,9 +1,9 @@
-import '@/styles/style.css';
+import '../styles/style.css';
 import 'leaflet/dist/leaflet.css';
 
 import { map as leaflet, tileLayer, geoJSON } from 'leaflet';
-import { stores as rawStores } from '@/scripts/sweetgreen';
-import { addMarker, createIcon } from '@/scripts/utils';
+import { stores } from './sweetgreen';
+import { addMarker, createIcon } from './utils';
 
 // Initialize the map
 const tileOSM = tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -17,7 +17,6 @@ const map = leaflet('map', {
 });
 
 // Edit geoJSON
-const stores = { ...rawStores };
 const newFeatures = stores.features.map((store, index) => {
   store.properties['id'] = index + 1;
   return store;
