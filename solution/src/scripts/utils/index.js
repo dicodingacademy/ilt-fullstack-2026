@@ -3,34 +3,6 @@ import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 
-export function sleep(time = 1000) {
-  return new Promise((resolve) => setTimeout(resolve, time));
-}
-
-export function showFormattedDate(date, locale = 'en-US', options = {}) {
-  return new Date(date).toLocaleDateString(locale, {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    ...options,
-  });
-}
-
-export function isGeolocationAvailable() {
-  return 'geolocation' in navigator;
-}
-
-export async function getCurrentPosition(options = {}) {
-  return new Promise((resolve, reject) => {
-    if (!isGeolocationAvailable()) {
-      reject('Geolocation API unsupported');
-      return;
-    }
-
-    navigator.geolocation.getCurrentPosition(resolve, reject, options);
-  });
-}
-
 export function createIcon(options = {}) {
   return icon({
     ...Icon.Default.prototype.options,
