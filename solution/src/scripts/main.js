@@ -5,23 +5,18 @@ import { map as leaflet, tileLayer, geoJSON } from 'leaflet';
 import { stores } from './sweetgreen';
 import { addMarker, createIcon } from './map-utils';
 
-// Initialize the map
+// Initialize tile layer
 const tileOSM = tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 });
+
+// Initialize the map
 const map = leaflet('map', {
   zoom: 10,
   center: [-6.2, 106.816666], // jakarta coordinate
   scrollWheelZoom: false,
   layers: [tileOSM],
 });
-
-// Edit geoJSON
-const newFeatures = stores.features.map((store, index) => {
-  store.properties['id'] = index + 1;
-  return store;
-});
-stores['features'] = newFeatures;
 
 // Populate the listings to the DOM
 const listOfListingItemElement = stores.features.map((store) => {
@@ -35,6 +30,7 @@ const listOfListingItemElement = stores.features.map((store) => {
     </li>
   `;
 });
+
 document.getElementById('listings').innerHTML = listOfListingItemElement.join('');
 
 // Display geoJSON data on the map
