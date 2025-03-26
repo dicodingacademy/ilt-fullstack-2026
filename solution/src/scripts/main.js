@@ -3,7 +3,7 @@ import 'leaflet/dist/leaflet.css';
 
 import { map as leaflet, tileLayer, geoJSON } from 'leaflet';
 import { stores } from './sweetgreen';
-import { addMarker, createIcon } from './utils';
+import { addMarker, createIcon } from './map-utils';
 
 // Initialize the map
 const tileOSM = tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
