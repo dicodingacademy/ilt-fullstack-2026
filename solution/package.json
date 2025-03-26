@@ -7,9 +7,8 @@
   "license": "ISC",
   "description": "",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "webpack serve --config webpack.dev.js",
+    "build": "webpack build --config webpack.prod.js"
   },
   "dependencies": {
     "leaflet": "^1.9.4"
@@ -20,6 +19,7 @@
     "css-loader": "^7.1.2",
     "eslint": "^9.23.0",
     "eslint-config-dicodingacademy": "^0.9.4",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.6.3",
     "style-loader": "^4.0.0",
     "webpack": "^5.98.0",
