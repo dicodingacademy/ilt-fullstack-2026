@@ -1,3 +1,6 @@
+/* eslint-disable camelcase */
+
+exports.shorthands = undefined;
 
 exports.up = (pgm) => {
   pgm.createTable('products', {
@@ -9,14 +12,22 @@ exports.up = (pgm) => {
       type: 'VARCHAR(50)',
       notNull: true,
     },
-    price: {
-      type: 'INTEGER',
-      notNull: true,
+    description: {
+      type: 'VARCHAR(50)',
+      notNull: false,
     },
     category: {
-      type: 'VARCHAR(50)',
+      type: 'VARCHAR(20)',
+      notNull: false,
+    },
+    price_per_unit: {
+      type: 'INT',
       notNull: true,
     },
+    brand: {
+      type: 'VARCHAR(50)',
+      notNull: true
+    }
   });
 };
 

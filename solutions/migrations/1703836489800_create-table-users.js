@@ -1,25 +1,29 @@
+/* eslint-disable camelcase */
+
+exports.shorthands = undefined;
 
 exports.up = (pgm) => {
-  pgm.createTable('products', {
+  pgm.createTable('users', {
     id: {
       type: 'VARCHAR(50)',
       primaryKey: true,
     },
-    name: {
+    username: {
       type: 'VARCHAR(50)',
+      unique: true,
       notNull: true,
     },
-    price: {
-      type: 'INTEGER',
+    password: {
+      type: 'TEXT',
       notNull: true,
     },
-    category: {
-      type: 'VARCHAR(50)',
+    role: {
+      type: 'VARCHAR(20)',
       notNull: true,
-    },
+    }
   });
 };
 
 exports.down = (pgm) => {
-  pgm.dropTable('products');
+  pgm.dropTable('users');
 };
