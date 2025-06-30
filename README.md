@@ -70,4 +70,5 @@ Instruktur dapat memanfaatkan checklist live demo berikut agar sesi hands-on leb
 - [ ] Menambahkan konfigurasi untuk route POST /products
 - [ ] Menambahkan konfigurasi untuk route GET /products
 - [ ] Menambahkan konfigurasi untuk route GET /users/:id
+- [ ] Mendaftarkan plugin JWT dan hacli di server.js 
 - [ ] Menambahkan konfigurasi plugin JWT dan hacli di server.js

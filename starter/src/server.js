@@ -41,6 +41,12 @@ const init = async () => {
     * Register the plugin Jwt and hacli
   */
 
+
+  /**
+    * @TODO 5
+    * Mendefinisikan strategy autentikasi jwt
+  */
+
   await server.register([
     {
       plugin: users,

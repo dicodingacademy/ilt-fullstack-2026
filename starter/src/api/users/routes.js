@@ -11,6 +11,7 @@ const routes = (handler) => [
     /**
      * @TODO 3
      * Define configuration for the GET /users/{id} route
+     * This route can be access by authenticated users
     */
   },
 ];
