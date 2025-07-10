@@ -1,8 +1,13 @@
 const routes = (handler) => [
   /**
  * @TODO 1
- * Define rout for POST method
+ * Define route for POST method
  */
+  {
+    method: 'POST',
+    path: '/products',
+    handler: handler.addProductHandler,
+  },
   {
     method: 'GET',
     path: '/products',

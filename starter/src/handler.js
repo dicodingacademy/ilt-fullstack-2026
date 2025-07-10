@@ -11,6 +11,28 @@ class ProductsHandler {
  * @TODO 2
  * Define handler for post product handler
  */
+  async addProductHandler(request, h) {
+    try {
+      const { name, price, stock } = request.payload;
+      const productId = await this._service.addProduct({ name, price, stock });
+      const response = h.response({
+        status: 'success',
+        message: 'Product berhasil ditambahkan',
+        data: {
+          productId,
+        },
+      });
+      response.code(201);
+      return response;
+    } catch (error) {
+      const response = h.response({
+        status: 'fail',
+        message: error.message,
+      });
+      response.code(400);
+      return response;
+    }
+  }
 
   async getAllProductsHandler(request, h) {
     const products = await this._service.getAllProducts();
