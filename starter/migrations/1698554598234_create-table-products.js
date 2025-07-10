@@ -13,9 +13,13 @@ exports.up = (pgm) => {
       type: 'INTEGER',
       notNull: true,
     },
+    stock: {
+      type: 'INTEGER',
+      notNull: true,
+    },
     category: {
       type: 'VARCHAR(50)',
-      notNull: true,
+      notNull: false,
     },
   });
 };
