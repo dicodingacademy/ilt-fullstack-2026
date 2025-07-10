@@ -1,9 +1,13 @@
+require('dotenv').config();
 const { Pool } = require('pg');
 const { nanoid } = require('nanoid');
 
 class ProductsService {
   constructor() {
-    this._pool = new Pool();
+    this._pool = new Pool({
+      connectionString: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false }, // Required for Neon and most cloud DBs
+    });
   }
 
   /**
