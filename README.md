@@ -25,7 +25,7 @@ Dalam mengimplementasikan demo ini, kami sudah menyiapkan beberapa hal seperti.
 
 Agar instruktur dapat melakukan demo dengan lancar. Harap untuk melakukan hal-hal berikut terlebih dahulu.
 1. Clone repository ini.
-2. Checkout ke branch 07-backend-auth.
+2. Checkout ke branch 08-backend-ai.
 3. Buka directory `starter` dengan menggunakan Visual Studio Code.
 4. Pada terminal, jalankan `npm install`.
 6. Lengkapi berkas yang ditandai dengan komentar @TODO.
