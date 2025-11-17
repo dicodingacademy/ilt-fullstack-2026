@@ -1,0 +1,25 @@
+{
+  "name": "model-ai-on-be",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/server.js",
+    "lint": "eslint ./"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "eslint": "^9.31.0",
+    "eslint-config-dicodingacademy": "^0.9.5",
+    "globals": "^16.3.0",
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^21.3.9",
+    "@tensorflow/tfjs-node": "^4.22.0"
+  }
+}
