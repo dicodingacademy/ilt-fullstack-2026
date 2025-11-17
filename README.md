@@ -1,14 +1,14 @@
-# ILT Pengembangan di Sisi Server dengan JavaScript
+# ILT Back-End
 
 ## Pengantar
-Project ini digunakan untuk demonstrasi selama kegiatan ILT Back-End Authenticantion dan Authorization.
-Mengangkat studi kasus RESTful API sederhana aplikasi pengelola data produk.
+Project ini digunakan untuk demonstrasi selama kegiatan ILT Back-End Integrasi AI ke Back-End.
+Mengangkat studi kasus RESTful API sederhana untuk mendeteksi penyakit kulit.
 
 Dalam mengimplementasikan demo ini, kami sudah menyiapkan beberapa hal seperti.
 
 1. Package dependencies yang dibutuhkan untuk melakukan demo.
 2. Konfigurasi yang dibutuhkan untuk melakukan demo seperti database, server, dan linter.
-3. Script npm `start:dev` untuk menjalankan project di development, `migrate` untuk menjalankan migration, dan `lint` untuk menjalankan linter eslint.
+3. Script npm `start` untuk menjalankan project di development dan `lint` untuk menjalankan linter eslint.
 5. Berkas yang perlu dilengkapi oleh instruktur (diberi tanda @TODO).
 6. Solusi akhir dari implementasi automation pada folder `/solutions`.
 
@@ -17,7 +17,6 @@ Dalam mengimplementasikan demo ini, kami sudah menyiapkan beberapa hal seperti.
 
 - Visual Studio Code
 - Node.js Latest LTS
-- Database PostgreSQL
 - Postman (atau aplikasi sejenis untuk mengirim request HTTP)
 - Google Chrome (atau chromium browser lainnya).
 
@@ -33,23 +32,17 @@ Agar instruktur dapat melakukan demo dengan lancar. Harap untuk melakukan hal-ha
 
 ## Hasil Akhir Proyek
 
-### Endpoint Menambahkan Data Produk
-
-- Endpoint ini hanya dapat diakses oleh pengguna yang sudah terautentikasi dan user yang memiliki role `ADMIN`.
+### Endpoint Deteksi Penyakit
 
 - Method: POST
 
-- URL: /products 
+- URL: /predict 
 
 - Body request:
 ```
-{
-    "name": "Running Shoes",
-    "description": "Sepatu Lari",
-    "category": "Sepatu",
-    "price": "500000",
-    "brand": "Lokal"
-}
+Multipart/form-data
+Key: file
+Type: File
 ```
 
 - Body response:
@@ -58,7 +51,8 @@ Agar instruktur dapat melakukan demo dengan lancar. Harap untuk melakukan hal-ha
     "status": "success",
     "message": "Product berhasil ditambahkan",
     "data": {
-        "productId": "FjSpHZ-KKL6Id1Ja"
+        "disease": "Vascular Lesions",
+        "confidenceScore": 0.95
     }
 }
 ```
@@ -67,8 +61,7 @@ Agar instruktur dapat melakukan demo dengan lancar. Harap untuk melakukan hal-ha
 
 Instruktur dapat memanfaatkan checklist live demo berikut agar sesi hands-on lebih terstruktur.
 
-- [ ] Menambahkan konfigurasi untuk route POST /products
-- [ ] Menambahkan konfigurasi untuk route GET /products
-- [ ] Menambahkan konfigurasi untuk route GET /users/:id
-- [ ] Mendaftarkan plugin JWT dan hacli di server.js 
-- [ ] Menambahkan konfigurasi plugin JWT dan hacli di server.js
+- [ ] Memasang library yang dibutuhkan yaitu TensorFlow.js.
+- [ ] Menambahkan endpoint POST /predict untuk mendeteksi penyakit kulit.
+- [ ] Menambahkan handler untuk endpoint POST /predict.
+- [ ] Menambahkan services predict-service.js untuk memproses prediksi penyakit kulit.

@@ -1,30 +1,24 @@
 {
-  "name": "demo-devcoach-122",
+  "name": "model-ai-on-be",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:prod": "NODE_ENV=production node ./src/server.js",
-    "start:dev": "nodemon ./src/server.js",
-    "lint": "eslint ./src",
-    "migrate": "node-pg-migrate"
+    "start": "nodemon ./src/server.js",
+    "lint": "eslint ./"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "commonjs",
   "devDependencies": {
-    "eslint": "^9.29.0",
-    "eslint-config-dicodingacademy": "^0.9.4",
-    "nodemon": "^3.0.2"
+    "@eslint/js": "^9.31.0",
+    "eslint": "^9.31.0",
+    "eslint-config-dicodingacademy": "^0.9.5",
+    "globals": "^16.3.0",
+    "nodemon": "^3.1.10"
   },
   "dependencies": {
-    "@antoniogiordano/hacli": "^1.0.2",
-    "@hapi/hapi": "^21.3.2",
-    "@hapi/jwt": "^3.2.0",
-    "bcrypt": "^5.1.1",
-    "dotenv": "^16.3.1",
-    "nanoid": "^3.3.7",
-    "node-pg-migrate": "^6.2.2",
-    "pg": "^8.11.3"
+    "@hapi/hapi": "^21.3.9"
   }
 }
