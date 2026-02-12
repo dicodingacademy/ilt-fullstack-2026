@@ -5,7 +5,7 @@ const musicsSample = [
     author: 'Amir Firouzfard',
     signature: 'Music by <a href="https://pixabay.com/users/ambientaudiovision-25188255/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=186307">Amir Firouzfard</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=186307">Pixabay</a>',
     audioLink: 'https://github.com/dicoding-dev/static-files/raw/refs/heads/master/calm-music-api/musics/01-coverless-book.mp3',
-    artLink: 'https://cdn.statically.io/gh/dicoding-dev/static-files/7640fd7b4f2a7ee8d56ee266201893315629ad27/calm-music-api/arts/01-coverless-book.jpg'
+    artLink: 'https://rawcdn.githack.com/dicoding-dev/static-files/master/calm-music-api/arts/01-coverless-book.jpg'
   },
   {
     id: '02-lofi-orchestra',
@@ -13,7 +13,7 @@ const musicsSample = [
     author: 'Patrick A',
     signature: 'Music by <a href="https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=162306">Patrick A.</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=162306">Pixabay</a>',
     audioLink: 'https://github.com/dicoding-dev/static-files/raw/refs/heads/master/calm-music-api/musics/02-lofi-orchestra.mp3',
-    artLink: 'https://cdn.statically.io/gh/dicoding-dev/static-files/7640fd7b4f2a7ee8d56ee266201893315629ad27/calm-music-api/arts/02-lofi-orchestra.jpg'
+    artLink: 'https://rawcdn.githack.com/dicoding-dev/static-files/master/calm-music-api/arts/02-lofi-orchestra.jpg'
   },
   {
     id: '03-for-a-dream',
@@ -21,7 +21,7 @@ const musicsSample = [
     author: 'Patrick A',
     signature: 'Music by <a href="https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=216038">Patrick A.</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=216038">Pixabay</a>',
     audioLink: 'https://github.com/dicoding-dev/static-files/raw/refs/heads/master/calm-music-api/musics/03-for-a-dream.mp3',
-    artLink: 'https://cdn.statically.io/gh/dicoding-dev/static-files/7640fd7b4f2a7ee8d56ee266201893315629ad27/calm-music-api/arts/03-for-a-dream.jpg'
+    artLink: 'https://rawcdn.githack.com/dicoding-dev/static-files/master/calm-music-api/arts/03-for-a-dream.jpg'
   },
   {
     id: '04-goodnight',
@@ -29,7 +29,7 @@ const musicsSample = [
     author: 'FASSound',
     signature: 'Music by <a href="https://pixabay.com/users/fassounds-3433550/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=160166">FASSounds</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=160166">Pixabay</a>',
     audioLink: 'https://github.com/dicoding-dev/static-files/raw/refs/heads/master/calm-music-api/musics/04-goodnight.mp3',
-    artLink: 'https://cdn.statically.io/gh/dicoding-dev/static-files/7640fd7b4f2a7ee8d56ee266201893315629ad27/calm-music-api/arts/04-goodnight.jpg'
+    artLink: 'https://rawcdn.githack.com/dicoding-dev/static-files/master/calm-music-api/arts/04-goodnight.jpg'
   },
   {
     id: '05-summer-rain',
@@ -37,7 +37,7 @@ const musicsSample = [
     author: 'Patrick A',
     signature: 'Music by <a href="https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=216038">Patrick A.</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=216038">Pixabay</a>',
     audioLink: 'https://github.com/dicoding-dev/static-files/raw/refs/heads/master/calm-music-api/musics/05-summer-rain.mp3',
-    artLink: 'https://cdn.statically.io/gh/dicoding-dev/static-files/7640fd7b4f2a7ee8d56ee266201893315629ad27/calm-music-api/arts/05-summer-rain.jpg'
+    artLink: 'https://rawcdn.githack.com/dicoding-dev/static-files/master/calm-music-api/arts/05-summer-rain.jpg'
   },
   {
     id: '06-lofi-study',
@@ -45,7 +45,7 @@ const musicsSample = [
     author: 'FASSound',
     signature: 'Music by <a href="https://pixabay.com/users/fassounds-3433550/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=112191">FASSounds</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=112191">Pixabay</a>',
     audioLink: 'https://github.com/dicoding-dev/static-files/raw/refs/heads/master/calm-music-api/musics/06-lofi-study.mp3',
-    artLink: 'https://cdn.statically.io/gh/dicoding-dev/static-files/7640fd7b4f2a7ee8d56ee266201893315629ad27/calm-music-api/arts/06-lofi-study.jpg'
+    artLink: 'https://rawcdn.githack.com/dicoding-dev/static-files/master/calm-music-api/arts/06-lofi-study.jpg'
   },
   {
     id: '07-forest-guitar-lofi',
@@ -53,7 +53,7 @@ const musicsSample = [
     author: 'xethrocc',
     signature: 'Music by <a href="https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=161108">Patrick A.</a> from <a href="https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=161108">Pixabay</a>',
     audioLink: 'https://github.com/dicoding-dev/static-files/raw/refs/heads/master/calm-music-api/musics/07-forest-guitar-lofi.mp3',
-    artLink: 'https://cdn.statically.io/gh/dicoding-dev/static-files/7640fd7b4f2a7ee8d56ee266201893315629ad27/calm-music-api/arts/07-forest-guitar-lofi.jpg'
+    artLink: 'https://rawcdn.githack.com/dicoding-dev/static-files/master/calm-music-api/arts/07-forest-guitar-lofi.jpg'
   },
   {
     id: '08-chilling-homer',
@@ -61,7 +61,7 @@ const musicsSample = [
     author: 'OpenMusicList',
     signature: 'Music by <a href="https://pixabay.com/users/openmusiclist-24014275/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=187573">OpenMusicList</a> from <a href="https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=187573">Pixabay</a>',
     audioLink: 'https://github.com/dicoding-dev/static-files/raw/refs/heads/master/calm-music-api/musics/08-chilling-homer.mp3',
-    artLink: 'https://cdn.statically.io/gh/dicoding-dev/static-files/7640fd7b4f2a7ee8d56ee266201893315629ad27/calm-music-api/arts/08-chilling-homer.jpg'
+    artLink: 'https://rawcdn.githack.com/dicoding-dev/static-files/master/calm-music-api/arts/08-chilling-homer.jpg'
   },
   {
     id: '09-dust',
@@ -69,7 +69,7 @@ const musicsSample = [
     author: 'xethrocc',
     signature: 'Music by <a href="https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=205063">Patrick A.</a> from <a href="https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=205063">Pixabay</a>',
     audioLink: 'https://github.com/dicoding-dev/static-files/raw/refs/heads/master/calm-music-api/musics/09-dust.mp3',
-    artLink: 'https://cdn.statically.io/gh/dicoding-dev/static-files/7640fd7b4f2a7ee8d56ee266201893315629ad27/calm-music-api/arts/09-dust.jpg'
+    artLink: 'https://rawcdn.githack.com/dicoding-dev/static-files/master/calm-music-api/arts/09-dust.jpg'
   },
   {
     id: '10-zombies',
@@ -77,7 +77,7 @@ const musicsSample = [
     author: 'Patrick A',
     signature: 'Music by <a href="https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=154347">Patrick A.</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=154347">Pixabay</a>',
     audioLink: 'https://github.com/dicoding-dev/static-files/raw/refs/heads/master/calm-music-api/musics/10-zombies.mp3',
-    artLink: 'https://cdn.statically.io/gh/dicoding-dev/static-files/7640fd7b4f2a7ee8d56ee266201893315629ad27/calm-music-api/arts/10-zombies.jpg'
+    artLink: 'https://rawcdn.githack.com/dicoding-dev/static-files/master/calm-music-api/arts/10-zombies.jpg'
   }
 ];
 
