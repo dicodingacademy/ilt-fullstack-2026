@@ -1,18 +1,12 @@
-const routes = (handler) => [
+const routes = (controller, router) => {
   /**
  * @TODO 1
- * Define rout for POST method
+ * Define route for POST method
  */
-  {
-    method: 'GET',
-    path: '/products',
-    handler: handler.getAllProductsHandler,
-  },
-  {
-    method: 'GET',
-    path: '/products/{id}',
-    handler: handler.getOneProductHandler,
-  }
-];
+  router.get('/products', (req, res) => controller.getAllProducts(req, res));
+  router.get('/products/:id', (req, res) => controller.getOneProduct(req, res));
+  
+  return router;
+};
 
-module.exports = routes;
+export default routes;

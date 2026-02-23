@@ -1,24 +1,27 @@
-const Hapi = require('@hapi/hapi');
-const routes = require('./routes');
-const ProductsHandler = require('./handler');
-const ProductsService = require('./ProductsService');
-require('dotenv').config();
+import express from 'express';
+import routes from './routes.js';
+import ProductsController from './controller.js';
+import ProductsService from './ProductsService.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const init = async () => {
-  const server = Hapi.server({
-    host: 'localhost',
-    port: 3000,
-    debug: {
-      request: ['error']
-    },
-  });
+  const app = express();
+  const port = 3000;
+
+  app.use(express.json());
 
   const productsService = new ProductsService();
-  const productsHandler = new ProductsHandler(productsService);
-  server.route(routes(productsHandler));
+  const productsController = new ProductsController(productsService);
+  const router = express.Router();
+  
+  routes(productsController, router);
+  app.use(router);
 
-  await server.start();
-  console.log(`Server berjalan pada ${server.info.uri}`);
+  app.listen(port, 'localhost', () => {
+    console.log(`Server berjalan pada http://localhost:${port}`);
+  });
 };
 
 init();

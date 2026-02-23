@@ -1,5 +1,6 @@
-const { Pool } = require('pg');
-const { nanoid } = require('nanoid');
+import pkg from 'pg';
+const { Pool } = pkg;
+import { nanoid } from 'nanoid';
 
 class ProductsService {
   constructor() {
@@ -39,4 +40,4 @@ class ProductsService {
   }
 }
 
-module.exports = ProductsService;
+export default ProductsService;

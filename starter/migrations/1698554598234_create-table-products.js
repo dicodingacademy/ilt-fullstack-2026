@@ -1,5 +1,5 @@
 
-exports.up = (pgm) => {
+export const up = (pgm) => {
   pgm.createTable('products', {
     id: {
       type: 'VARCHAR(50)',
@@ -20,6 +20,6 @@ exports.up = (pgm) => {
   });
 };
 
-exports.down = (pgm) => {
+export const down = (pgm) => {
   pgm.dropTable('products');
 };

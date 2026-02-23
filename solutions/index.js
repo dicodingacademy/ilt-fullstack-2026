@@ -1,7 +1,7 @@
 // Source code for demo web server with Native
 
 // load http module
-const http = require('http');
+import http from 'http';
 
 const requestListener = (request, response) => {
   response.setHeader('Content-Type', 'application/json'); // set the content-type manually
