@@ -1,15 +1,9 @@
-const routes = (handler) => [
-    {
-        method: 'POST',
-        path: '/predict',
-        handler: handler.getPredictResult,
-        options: {
-            payload: {
-                allow: 'multipart/form-data',
-                multipart: true,
-            }
-        }
-    },
-];
+import multer from 'multer';
 
-module.exports = routes;
+const upload = multer();
+
+const routes = (app, predictController) => {
+  app.post('/predict', upload.single('file'), predictController.predict);
+};
+
+export default routes;
