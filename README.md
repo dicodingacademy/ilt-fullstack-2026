@@ -2,15 +2,15 @@
 
 ## Pengantar
 Project ini digunakan untuk demonstrasi selama kegiatan ILT Back-End Integrasi AI ke Back-End.
-Mengangkat studi kasus RESTful API sederhana untuk mendeteksi penyakit kulit.
+Mengangkat studi kasus RESTful API sederhana untuk mendeteksi penyakit kulit menggunakan Express 5 dan ESM.
 
 Dalam mengimplementasikan demo ini, kami sudah menyiapkan beberapa hal seperti.
 
 1. Package dependencies yang dibutuhkan untuk melakukan demo.
-2. Konfigurasi yang dibutuhkan untuk melakukan demo seperti database, server, dan linter.
+2. Konfigurasi yang dibutuhkan untuk melakukan demo seperti server dan linter.
 3. Script npm `start` untuk menjalankan project di development dan `lint` untuk menjalankan linter eslint.
-5. Berkas yang perlu dilengkapi oleh instruktur (diberi tanda @TODO).
-6. Solusi akhir dari implementasi automation pada folder `/solutions`.
+4. Berkas yang perlu dilengkapi oleh instruktur (diberi tanda @TODO).
+5. Solusi akhir dari implementasi pada folder `/solution`.
 
 
 ### Prerequisite tools
@@ -28,7 +28,14 @@ Agar instruktur dapat melakukan demo dengan lancar. Harap untuk melakukan hal-ha
 2. Checkout ke branch 08-backend-ai.
 3. Buka directory `starter` dengan menggunakan Visual Studio Code.
 4. Pada terminal, jalankan `npm install`.
-6. Lengkapi berkas yang ditandai dengan komentar @TODO.
+5. Lengkapi berkas yang ditandai dengan komentar @TODO.
+
+## Tech Stack
+
+- Express 5
+- ES Modules (ESM)
+- TensorFlow.js Node
+- Multer (untuk file upload)
 
 ## Hasil Akhir Proyek
 
@@ -61,7 +68,7 @@ Type: File
 
 Instruktur dapat memanfaatkan checklist live demo berikut agar sesi hands-on lebih terstruktur.
 
-- [ ] Memasang library yang dibutuhkan yaitu TensorFlow.js.
-- [ ] Menambahkan endpoint POST /predict untuk mendeteksi penyakit kulit.
-- [ ] Menambahkan handler untuk endpoint POST /predict.
-- [ ] Menambahkan services predict-service.js untuk memproses prediksi penyakit kulit.
+- [ ] Memasang library yang dibutuhkan yaitu TensorFlow.js dan Multer.
+- [ ] Menambahkan endpoint POST /predict untuk mendeteksi penyakit kulit di routes.js.
+- [ ] Menambahkan controller predict-controller.js untuk endpoint POST /predict.
+- [ ] Menambahkan service predict-service.js untuk memproses prediksi penyakit kulit menggunakan TensorFlow.js.
