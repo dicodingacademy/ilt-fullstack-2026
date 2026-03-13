@@ -16,7 +16,7 @@ Dalam mengimplementasikan demo ini, kami sudah menyiapkan beberapa hal seperti.
 ### Prerequisite tools
 
 - Visual Studio Code
-- Node.js Latest LTS
+- Node.js versi 22 atau lebih rendah
 - Postman (atau aplikasi sejenis untuk mengirim request HTTP)
 - Google Chrome (atau chromium browser lainnya).
 
