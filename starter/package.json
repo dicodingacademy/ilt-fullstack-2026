@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@eslint/js": "^9.31.0",
     "eslint": "^9.31.0",
@@ -19,6 +19,7 @@
     "nodemon": "^3.1.10"
   },
   "dependencies": {
-    "@hapi/hapi": "^21.3.9"
+    "express": "^5.0.1",
+    "multer": "^1.4.5-lts.1"
   }
 }

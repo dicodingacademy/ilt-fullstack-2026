@@ -1,21 +1,21 @@
-const Hapi = require('@hapi/hapi');
-const routes = require('./routes');
-const PredictService = require('./predict-service');
-const Handler = require('./handler');
+import express from 'express';
+import routes from './routes.js';
+import PredictService from './predict-service.js';
+import PredictController from './predict-controller.js';
 
 const init = async () => {
-    const server = Hapi.server({
-        port: 3000,
-        host: '0.0.0.0',
-    });
+  const app = express();
+  const port = 3000;
+  const host = '0.0.0.0';
 
-    const predictService = new PredictService();
+  const predictService = new PredictService();
+  const predictController = new PredictController(predictService);
 
-    const handler = new Handler(predictService);
-    server.route(routes(handler));
+  routes(app, predictController);
 
-    await server.start();
-    console.log('Server running on', server.info.uri);
+  app.listen(port, host, () => {
+    console.log(`Server running on http://${host}:${port}`);
+  });
 };
 
 init();
