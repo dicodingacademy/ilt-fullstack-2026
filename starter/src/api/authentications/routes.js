@@ -1,19 +1,7 @@
-const routes = (handler) => [
-  {
-    method: 'POST',
-    path: '/authentications',
-    handler: handler.postAuthenticationHandler,
-  },
-  {
-    method: 'PUT',
-    path: '/authentications',
-    handler: handler.putAuthenticationHandler,
-  },
-  {
-    method: 'DELETE',
-    path: '/authentications',
-    handler: handler.deleteAuthenticationHandler,
-  },
-];
+const routes = (router, controller) => {
+  router.post('/', controller.postAuthenticationHandler);
+  router.put('/', controller.putAuthenticationHandler);
+  router.delete('/', controller.deleteAuthenticationHandler);
+};
 
-module.exports = routes;
+export default routes;

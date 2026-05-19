@@ -1,7 +1,7 @@
-const ClientError = require('../../exceptions/ClientError');
+import ClientError from '../../exceptions/ClientError.js';
 
-class AuthenticationsHandler {
-  constructor(authenticationsService, usersService, tokenManager, validator) {
+class AuthenticationsController {
+  constructor(authenticationsService, usersService, tokenManager) {
     this._authenticationsService = authenticationsService;
     this._usersService = usersService;
     this._tokenManager = tokenManager;
@@ -11,9 +11,9 @@ class AuthenticationsHandler {
     this.deleteAuthenticationHandler = this.deleteAuthenticationHandler.bind(this);
   }
 
-  async postAuthenticationHandler(request, h) {
+  async postAuthenticationHandler(req, res) {
     try {
-      const { username, password } = request.payload;
+      const { username, password } = req.body;
       const user = await this._usersService.verifyUserCredential(username, password);
 
       const accessToken = this._tokenManager.generateAccessToken({ id: user.id, role: user.role });
@@ -21,7 +21,7 @@ class AuthenticationsHandler {
 
       await this._authenticationsService.addRefreshToken(refreshToken);
 
-      const response = h.response({
+      return res.status(201).json({
         status: 'success',
         message: 'Authentication berhasil ditambahkan',
         data: {
@@ -31,98 +31,80 @@ class AuthenticationsHandler {
           refreshToken,
         },
       });
-      response.code(201);
-      return response;
     } catch (error) {
       if (error instanceof ClientError) {
-        const response = h.response({
+        return res.status(error.statusCode).json({
           status: 'fail',
           message: error.message,
         });
-        response.code(error.statusCode);
-        return response;
       }
 
       // Server ERROR!
-      const response = h.response({
+      console.error(error);
+      return res.status(500).json({
         status: 'error',
         message: 'Maaf, terjadi kegagalan pada server kami.',
       });
-      response.code(500);
-      console.error(error);
-      return response;
     }
   }
 
-  async putAuthenticationHandler(request, h) {
+  async putAuthenticationHandler(req, res) {
     try {
-      this._validator.validatePutAuthenticationPayload(request.payload);
-
-      const { refreshToken } = request.payload;
+      const { refreshToken } = req.body;
       await this._authenticationsService.verifyRefreshToken(refreshToken);
       const { id } = this._tokenManager.verifyRefreshToken(refreshToken);
 
       const accessToken = this._tokenManager.generateAccessToken({ id });
-      return {
+      return res.json({
         status: 'success',
         message: 'Access Token berhasil diperbarui',
         data: {
           accessToken,
         },
-      };
+      });
     } catch (error) {
       if (error instanceof ClientError) {
-        const response = h.response({
+        return res.status(error.statusCode).json({
           status: 'fail',
           message: error.message,
         });
-        response.code(error.statusCode);
-        return response;
       }
 
       // Server ERROR!
-      const response = h.response({
+      console.error(error);
+      return res.status(500).json({
         status: 'error',
         message: 'Maaf, terjadi kegagalan pada server kami.',
       });
-      response.code(500);
-      console.error(error);
-      return response;
     }
   }
 
-  async deleteAuthenticationHandler(request, h) {
+  async deleteAuthenticationHandler(req, res) {
     try {
-      this._validator.validateDeleteAuthenticationPayload(request.payload);
-
-      const { refreshToken } = request.payload;
+      const { refreshToken } = req.body;
       await this._authenticationsService.verifyRefreshToken(refreshToken);
       await this._authenticationsService.deleteRefreshToken(refreshToken);
 
-      return {
+      return res.json({
         status: 'success',
         message: 'Refresh token berhasil dihapus',
-      };
+      });
     } catch (error) {
       if (error instanceof ClientError) {
-        const response = h.response({
+        return res.status(error.statusCode).json({
           status: 'fail',
           message: error.message,
         });
-        response.code(error.statusCode);
-        return response;
       }
 
       // Server ERROR!
-      const response = h.response({
+      console.error(error);
+      return res.status(500).json({
         status: 'error',
         message: 'Maaf, terjadi kegagalan pada server kami.',
       });
-      response.code(500);
-      console.error(error);
-      return response;
     }
   }
 }
 
-module.exports = AuthenticationsHandler;
+export default AuthenticationsController;

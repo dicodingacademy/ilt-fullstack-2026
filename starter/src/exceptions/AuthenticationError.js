@@ -1,4 +1,4 @@
-const ClientError = require('./ClientError');
+import ClientError from './ClientError.js';
 
 class AuthenticationError extends ClientError {
   constructor(message) {
@@ -7,4 +7,4 @@ class AuthenticationError extends ClientError {
   }
 }
 
-module.exports = AuthenticationError;
+export default AuthenticationError;

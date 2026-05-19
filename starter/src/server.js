@@ -1,77 +1,56 @@
 // mengimpor dotenv dan menjalankan konfigurasinya
-require('dotenv').config();
+import 'dotenv/config';
 
-const Hapi = require('@hapi/hapi');
-const Jwt = require('@hapi/jwt');
-const hacli = require('@antoniogiordano/hacli');
+import express from 'express';
 
 // users
-const users = require('./api/users');
-const UsersService = require('./services/UsersService');
+import usersRouter from './api/users/index.js';
+import UsersService from './services/UsersService.js';
 
 // authentications
-const authentications = require('./api/authentications');
-const AuthenticationsService = require('./services/AuthenticationsService');
-const TokenManager = require('./tokenize/TokenManager');
+import authenticationsRouter from './api/authentications/index.js';
+import AuthenticationsService from './services/AuthenticationsService.js';
+import TokenManager from './tokenize/TokenManager.js';
 
 // products
-const products = require('./api/products');
-const ProductsService = require('./services/ProductsService');
+import productsRouter from './api/products/index.js';
+import ProductsService from './services/ProductsService.js';
 
 const init = async () => {
   const usersService = new UsersService();
   const authenticationsService = new AuthenticationsService();
   const productsService = new ProductsService();
 
-  const server = Hapi.server({
-    port: process.env.PORT,
-    host: process.env.HOST,
-    debug: {
-      request: ['error']
-    },
-    routes: {
-      cors: {
-        origin: ['*'],
-      },
-    },
+  const app = express();
+
+  // middleware
+  app.use(express.json());
+
+  /**
+   * @TODO 4
+   * Register middleware for JWT authentication
+   */
+
+  /**
+   * @TODO 5
+   * Mendefinisikan strategy autentikasi jwt
+   */
+
+  // routes
+  app.use('/users', usersRouter({ service: usersService }));
+  app.use('/authentications', authenticationsRouter({
+    authenticationsService,
+    usersService,
+    tokenManager: TokenManager,
+  }));
+  app.use('/products', productsRouter({ service: productsService }));
+
+  const port = process.env.PORT;
+  const host = process.env.HOST;
+
+  app.listen(port, host, () => {
+    console.log(`Server berjalan pada http://${host}:${port}`);
   });
-
-  /**
-    * @TODO 4
-    * Register the plugin Jwt and hacli
-  */
-
-
-  /**
-    * @TODO 5
-    * Mendefinisikan strategy autentikasi jwt
-  */
-
-  await server.register([
-    {
-      plugin: users,
-      options: {
-        service: usersService,
-      },
-    },
-    {
-      plugin: authentications,
-      options: {
-        authenticationsService,
-        usersService,
-        tokenManager: TokenManager,
-      },
-    },
-    {
-      plugin: products,
-      options: {
-        service: productsService
-      }
-    }
-  ]);
-
-  await server.start();
-  console.log(`Server berjalan pada ${server.info.uri}`);
 };
 
 init();
