@@ -1,19 +1,18 @@
-const AuthenticationsHandler = require('./handler');
-const routes = require('./routes');
+import { Router } from 'express';
+import AuthenticationsController from './controller.js';
+import routes from './routes.js';
 
-module.exports = {
-  name: 'authentications',
-  version: '1.0.0',
-  register: async (server, {
+const authenticationsRouter = ({ authenticationsService, usersService, tokenManager }) => {
+  const router = Router();
+  const authenticationsController = new AuthenticationsController(
     authenticationsService,
     usersService,
     tokenManager,
-  }) => {
-    const authenticationsHandler = new AuthenticationsHandler(
-      authenticationsService,
-      usersService,
-      tokenManager,
-    );
-    server.route(routes(authenticationsHandler));
-  },
+  );
+
+  routes(router, authenticationsController);
+
+  return router;
 };
+
+export default authenticationsRouter;

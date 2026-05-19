@@ -1,6 +1,6 @@
-const ClientError = require('../../exceptions/ClientError');
+import ClientError from '../../exceptions/ClientError.js';
 
-class UsersHandler {
+class UsersController {
   constructor(service) {
     this._service = service;
 
@@ -8,72 +8,62 @@ class UsersHandler {
     this.getUserByIdHandler = this.getUserByIdHandler.bind(this);
   }
 
-  async postUserHandler(request, h) {
+  async postUserHandler(req, res) {
     try {
-      const { username, password, role } = request.payload;
+      const { username, password, role } = req.body;
 
       const userId = await this._service.addUser({ username, password, role });
-      const response = h.response({
+      return res.status(201).json({
         status: 'success',
         message: 'User berhasil ditambahkan',
         data: {
           userId,
         },
       });
-      response.code(201);
-      return response;
     } catch (error) {
       if (error instanceof ClientError) {
-        const response = h.response({
+        return res.status(error.statusCode).json({
           status: 'fail',
           message: error.message,
         });
-        response.code(error.statusCode);
-        return response;
       }
 
       // Server ERROR!
-      const response = h.response({
+      console.error(error);
+      return res.status(500).json({
         status: 'error',
         message: 'Maaf, terjadi kegagalan pada server kami.',
       });
-      response.code(500);
-      console.error(error);
-      return response;
     }
   }
 
-  async getUserByIdHandler(request, h) {
+  async getUserByIdHandler(req, res) {
     try {
-      const { id } = request.params;
+      const { id } = req.params;
 
       const user = await this._service.getUserById(id);
-      return {
+      return res.json({
         status: 'success',
         data: {
           user,
         },
-      };
+      });
     } catch (error) {
       if (error instanceof ClientError) {
-        const response = h.response({
+        return res.status(error.statusCode).json({
           status: 'fail',
           message: error.message,
         });
-        response.code(error.statusCode);
-        return response;
       }
 
       // server ERROR!
-      const response = h.response({
+      console.error(error);
+      return res.status(500).json({
         status: 'error',
         message: 'Maaf, terjadi kegagalan pada server kami.',
       });
-      response.code(500);
-      console.error(error);
-      return response;
     }
   }
 }
 
-module.exports = UsersHandler;
+export default UsersController;

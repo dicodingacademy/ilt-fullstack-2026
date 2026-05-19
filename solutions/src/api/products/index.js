@@ -1,11 +1,14 @@
-const ProductsHandler = require('./handler');
-const routes = require('./routes');
+import { Router } from 'express';
+import ProductsController from './controller.js';
+import routes from './routes.js';
 
-module.exports = {
-  name: 'products',
-  version: '1.0.0',
-  register: async (server, { service }) => {
-    const productsHandler = new ProductsHandler(service);
-    server.route(routes(productsHandler));
-  },
+const productsRouter = ({ service }) => {
+  const router = Router();
+  const productsController = new ProductsController(service);
+
+  routes(router, productsController);
+
+  return router;
 };
+
+export default productsRouter;

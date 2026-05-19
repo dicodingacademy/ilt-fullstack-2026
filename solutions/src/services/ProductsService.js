@@ -1,6 +1,8 @@
-const { Pool } = require('pg');
-const { nanoid } = require('nanoid');
-const InvariantError = require('../exceptions/InvariantError');
+import pg from 'pg';
+import { nanoid } from 'nanoid';
+import InvariantError from '../exceptions/InvariantError.js';
+
+const { Pool } = pg;
 
 class ProductsService {
   constructor() {
@@ -33,4 +35,4 @@ class ProductsService {
   }
 }
 
-module.exports = ProductsService;
+export default ProductsService;

@@ -1,17 +1,8 @@
-const routes = (handler) => [
-  {
-    method: 'POST',
-    path: '/users',
-    handler: handler.postUserHandler,
-  },
-  {
-    method: 'GET',
-    path: '/users/{id}',
-    handler: handler.getUserByIdHandler,
-    config: {
-      auth: 'ecommerce_app'
-    }
-  },
-];
+import { authenticate } from '../../middleware/authMiddleware.js';
 
-module.exports = routes;
+const routes = (router, controller) => {
+  router.post('/', controller.postUserHandler);
+  router.get('/:id', authenticate, controller.getUserByIdHandler);
+};
+
+export default routes;

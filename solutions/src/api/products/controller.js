@@ -1,6 +1,6 @@
-const ClientError = require('../../exceptions/ClientError');
+import ClientError from '../../exceptions/ClientError.js';
 
-class ProductsHandler {
+class ProductsController {
   constructor(service) {
     this._service = service;
 
@@ -8,71 +8,61 @@ class ProductsHandler {
     this.getProductsHandler = this.getProductsHandler.bind(this);
   }
 
-  async postProductHandler(request, h) {
+  async postProductHandler(req, res) {
     try {
-      const { name, description, category, price, brand } = request.payload;
+      const { name, description, category, price, brand } = req.body;
 
       const product = await this._service.addProduct({ name, description, category, price, brand });
 
-      const response = h.response({
+      return res.status(201).json({
         status: 'success',
         message: 'Produk berhasil ditambahkan',
         data: {
           product,
         },
       });
-      response.code(201);
-      return response;
     } catch (error) {
       if (error instanceof ClientError) {
-        const response = h.response({
+        return res.status(error.statusCode).json({
           status: 'fail',
           message: error.message,
         });
-        response.code(error.statusCode);
-        return response;
       }
 
       // Server ERROR!
-      const response = h.response({
+      console.error(error);
+      return res.status(500).json({
         status: 'error',
         message: 'Maaf, terjadi kegagalan pada server kami.',
       });
-      response.code(500);
-      console.error(error);
-      return response;
     }
   }
 
-  async getProductsHandler(request, h) {
+  async getProductsHandler(req, res) {
     try {
       const products = await this._service.getAllProducts();
-      return {
+      return res.json({
         status: 'success',
         data: {
           products,
         },
-      };
+      });
     } catch (error) {
       if (error instanceof ClientError) {
-        const response = h.response({
+        return res.status(error.statusCode).json({
           status: 'fail',
           message: error.message,
         });
-        response.code(error.statusCode);
-        return response;
       }
 
       // server ERROR!
-      const response = h.response({
+      console.error(error);
+      return res.status(500).json({
         status: 'error',
         message: 'Maaf, terjadi kegagalan pada server kami.',
       });
-      response.code(500);
-      console.error(error);
-      return response;
     }
   }
 }
 
-module.exports = ProductsHandler;
+export default ProductsController;
