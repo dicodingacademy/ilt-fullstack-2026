@@ -65,5 +65,5 @@ Agar instruktur dapat melakukan demo dengan lancar. Harap untuk melakukan hal-ha
 Instruktur dapat memanfaatkan checklist live demo berikut agar sesi hands-on lebih terstruktur.
 
 - [ ] Menambahkan route baru di `src/routes.js`.
-- [ ] Menambahkan satu handler di `src/handler.js`
+- [ ] Menambahkan satu handler di `src/controller.js`
 - [ ] Menambahkan satu function untuk menyimpan data produk di `src/ProductService.js`
