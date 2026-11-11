@@ -19,7 +19,6 @@
     "nodemon": "^3.1.10"
   },
   "dependencies": {
-    "express": "^5.0.1",
-    "multer": "^1.4.5-lts.1"
+    "express": "^5.0.1"
   }
 }

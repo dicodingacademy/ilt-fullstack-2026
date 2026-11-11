@@ -5,20 +5,10 @@ class PredictController {
     this.predict = this.predict.bind(this);
   }
 
-  async predict(req, res) {
-    const photo = req.file;
-    const predict = await this._modelService.predictImage(photo.buffer);
-    const { diseaseLabel, confidenceScore } = predict;
-
-    res.json({
-      status: 'success',
-      message: 'Predict success',
-      data: {
-        disease: diseaseLabel,
-        confidenceScore
-      }
-    });
-  }
+  /**
+   * @TODO 2
+   * Define a predict method to handle the request.
+   */
 }
 
 export default PredictController;

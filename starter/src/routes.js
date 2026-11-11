@@ -3,7 +3,10 @@ import multer from 'multer';
 const upload = multer();
 
 const routes = (app, predictController) => {
-  app.post('/predict', upload.single('file'), predictController.predict);
+  /**
+   * @TODO 1
+   * Define a route for the POST /predict endpoint.
+   */
 };
 
 export default routes;
